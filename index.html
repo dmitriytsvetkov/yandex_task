@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Test work, Tsvetkov Dmitry</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script
+					src="https://code.jquery.com/jquery-3.2.1.min.js"
+					integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+					crossorigin="anonymous"></script>
+	<script src="index.js"></script>
+	<style>
+		.error {
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container">
+		<form id="myForm" onsubmit="event.preventDefault(); window.MyForm.submit();">
+			<div>
+				<label for="fio">Введите имя</label>
+				<input type="text" name="fio" id="fio" placeholder="Иван Иванович Иванов">
+			</div>
+			<div>
+				<label for="email">Введите email</label>
+				<input type="email" name="email" id="email" placeholder="test@yandex.ru" >
+			</div>
+			<div>
+				<label for="phone">Введите телефон</label>
+				<input type="tel" name="phone" id="phone" placeholder="+7(111)222-33-11">
+			</div>
+			<div>
+				<input type="submit" id="submitButton">
+			</div>
+		</form>
+	<div id="resultContainer">
+	</div>
+</div>
+
+</body>
+</html>
