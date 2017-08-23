@@ -36,17 +36,17 @@ window.MyForm = {
 
 		if (!fioValidate()) {
 			isValid = false;
-			$("#fio").addClass("error"); // Должно быть ровно 3 слова
+			$("#fio").addClass("error");
 			errorFields.push('fio');
 		}
 		if (!emailValidate()) {
 			isValid = false;
-			$("#email").addClass("error"); // Почта может быть только в доменах ya.ru, yandex.ru, yandex.ua, yandex.by, yandex.kz, yandex.com");
+			$("#email").addClass("error");
 			errorFields.push('email');
 		}
 		if (!phoneValidate()) {
 			isValid = false;
-			$("#phone").addClass("error"); // Сумма всех цифр телефона не должна превышать 30;
+			$("#phone").addClass("error");
 			errorFields.push('phone');
 		}
 		if (fio && email && phone){
@@ -110,14 +110,10 @@ window.MyForm = {
 					function (result, textStatus, XMLHttpRequest) {
 						if (XMLHttpRequest.status === 200) {
 							if (result.status === 'success') {
-								// контейнеру resultContainer должен быть выставлен класс success и добавлено содержимое с текстом "Success"
 								setSuccess();
 							} else if (result.status === 'error') {
-								// контейнеру resultContainer должен быть выставлен класс error и добавлено содержимое с текстом из поля reason
 								setError(result.reason)
 							} else if (result.status === 'progress') {
-								// контейнеру resultContainer должен быть выставлен класс progress и через timeout миллисекунд необходимо повторить запрос (логика должна повторяться,
-								// пока в ответе не вернется отличный от progress статус)
 								setProgress();
 								setTimeout(sendAjax, result.timeout)
 							}
