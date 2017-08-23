@@ -119,7 +119,7 @@ window.MyForm = {
 								// контейнеру resultContainer должен быть выставлен класс progress и через timeout миллисекунд необходимо повторить запрос (логика должна повторяться,
 								// пока в ответе не вернется отличный от progress статус)
 								setProgress();
-								setTimeout(sendAjax(), result.timeout)
+								setTimeout(sendAjax, result.timeout)
 							}
 						}
 					})
